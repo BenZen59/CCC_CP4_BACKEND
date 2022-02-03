@@ -1,4 +1,5 @@
 const express = require('express');
+const cors = require('cors');
 const { backPort } = require('./conf');
 const animeRoutes = require('./routes/anime');
 const mangaRoutes = require('./routes/manga');
@@ -6,6 +7,7 @@ const clampRoutes = require('./routes/clamp');
 const cardRoutes = require('./routes/card');
 
 const app = express();
+app.use(cors());
 app.use(express.json());
 
 app.use('/anime', animeRoutes);

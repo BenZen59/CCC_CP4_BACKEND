@@ -9,7 +9,7 @@ router.get('/', async (req, res) => {
       `SELECT id, nameAuthor, birthday, task, pictureProfile FROM clamp`
     );
     if (clamp.length) {
-      res.status(200).json(comments);
+      res.status(200).json(clamp);
     } else {
       res.status(404).send('Comments not found');
     }
